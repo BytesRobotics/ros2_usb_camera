@@ -54,6 +54,7 @@ CameraDriver::CameraDriver(const rclcpp::NodeOptions &node_options) : Node("usb_
     cap.open(camera_id);
     cap.set(cv::CAP_PROP_FRAME_WIDTH, image_width_);
     cap.set(cv::CAP_PROP_FRAME_HEIGHT, image_height_);
+    cap.set(cv::CAP_PROP_FPS, fps_);
 
     last_frame_ = std::chrono::steady_clock::now();
 
